@@ -10,9 +10,12 @@ $(document).ready(function () {
 
 
     $(document).on('click', '#search-button', function (event) {
-        event.preventDefault();
-        buildTicketmasterUrl();
-        callTicketMasterAPI ()
+        event.preventDefault(); //prevent page refresh
+        convertDateFormat(); // converts the date format to the required form for ticketmaster
+        buildTicketmasterUrl(); //build the query url
+        callTicketMasterAPI (); //call the ticketmaster API and return and format data
+
+
 
     
     });
@@ -20,10 +23,24 @@ $(document).ready(function () {
 });//close document ready
 
 
+
+
+
 ////////////////////////////////
-//Called Functions
+//Called Functions Section
 ////////////////////////////////
 
+//Formats the date input to the format ticketmaster requires
+
+function convertDateFormat() {
+
+///use moment js
+
+}; // End convert data function
+
+
+
+//Builds TicketMaster query URL
 
 function buildTicketmasterUrl() {
     var keywordInput = $('#keyword-input').val();
@@ -33,6 +50,9 @@ function buildTicketmasterUrl() {
     } else {
         var keyword = '&keyword=' + keywordInput;
     };
+
+/////////////////////////
+//THIS SECTION IS FOR ADDITIONAL SEARCH PARAMETERS AS NEEDED
 
     // if (cityInput.val() == '') {
     //     city = '';
@@ -60,6 +80,11 @@ function buildTicketmasterUrl() {
     queryUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=' + ticketMasterAPIkey + keyword + city + startDate + endDate;
 
 }; //end build ticketmaster url
+
+
+/////////////////////////////////////
+//Call the ticketmaster API and returns the necessary data in 
+//the forme needed for the open weather API
 
 function callTicketMasterAPI () {
     ///call to TicketMaster API
