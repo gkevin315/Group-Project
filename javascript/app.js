@@ -1,46 +1,72 @@
-$(function () {
-    var bindDatePicker = function() {
-         $(".date").datetimepicker({
-         format:'YYYY-MM-DD',
-             icons: {
-                 time: "fa fa-clock-o",
-                 date: "fa fa-calendar",
-                 up: "fa fa-arrow-up",
-                 down: "fa fa-arrow-down"
-             }
-         }).find('input:first').on("blur",function () {
-             // check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
-             // update the format if it's yyyy-mm-dd
-             var date = parseDate($(this).val());
- 
-             if (! isValidDate(date)) {
-                 //create date based on momentjs (we have that)
-                 date = moment().format('YYYY-MM-DD');
-             }
- 
-             $(this).val(date);
-         });
-     }
+$(document).ready(function () {
+
+    var ticketMasterAPIkey = '3KM0vy3D2FmO3jenjLVFjqLyfQUwxe34';
+    var queryUrl = '';
+    var keyword = '';
+    var city = '';
+    var startDate = '';
+    var endDate = '';
+
     
-    var isValidDate = function(value, format) {
-         format = format || false;
-         // lets parse the date to the best of our knowledge
-         if (format) {
-             value = parseDate(value);
-         }
- 
-         var timestamp = Date.parse(value);
- 
-         return isNaN(timestamp) == false;
-    }
-    
-    var parseDate = function(value) {
-         var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
-         if (m)
-             value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
- 
-         return value;
-    }
-    
-    bindDatePicker();
-  });
+
+    //building the queryUrl
+    // need to pull in information from inputs on the main page and put into the correct formats
+    //date format is 2018-07-08T01:03:00Z using zulu (UTC / universal) time. Need to convert to local time
+
+    // if (keyWordInput.val() == '') {
+    //     keyword = '';
+    // } else {
+    //     var keyword = '&keyword='/* + input from keyword field*/;
+    // };
+
+    // if (cityInput.val() == '') {
+    //     city = '';
+    // } else {
+    //     var city = '&city=' /* + input from city field*/;
+    // };
+
+    // if (startDateInput.val() == '') {
+    //     startDate = '';
+    // } else {
+    //     var startDate = '&startDateTime=' /*input from startDate in proper format*/
+    // }
+
+    // if (endDateInput.val() == '') {
+    //     endDate = '';
+    // } else {
+    //     var endDate = '&endDateTime=' /*input from endDate in proper format*/
+    // };
+
+    keyword = '&keyword=orlando';
+
+    queryUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=' + ticketMasterAPIkey + keyword + city + startDate + endDate;
+
+
+
+    ///call to TicketMaster API
+    $.ajax({
+        type: "GET",
+        url: queryUrl,
+        async: true,
+        dataType: "json",
+        success: function (json) {
+            console.log(json);
+            // Parse the response.
+            // Do other things.
+
+
+            //var tickmasterReturn = JSON.parse(json);
+            var events = json._embedded.events; //stores event array from json returned from API
+            console.log(events); // outputs array of events
+            console.log(events[0].name); //outputs name of event, cycle through events and check length of events array likely needed
+            console.log(events[0]._embedded.venues[0].name);// ouputs the name of the venue, more venues could exist. check output for tours as needed
+            console.log(events[0]._embedded.venues[0].city.name); // outputs city name of venue
+            console.log(events[0]._embedded.venues[0].state.name); //outputs state where venue is located
+            console.log(events[0]._embedded.venues[0].postalCode); //outputs zip / post code of venue
+        },
+        error: function (xhr, status, err) {
+            // This time, we do not end up here!
+        }
+    });
+
+});//close document ready
