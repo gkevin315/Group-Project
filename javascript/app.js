@@ -8,6 +8,7 @@ $(document).ready(function () {
     var endDate = '';
 
     
+    
 
     //building the queryUrl
     // need to pull in information from inputs on the main page and put into the correct formats
