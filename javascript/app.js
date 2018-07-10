@@ -1,23 +1,38 @@
+
+var ticketMasterAPIkey = '3KM0vy3D2FmO3jenjLVFjqLyfQUwxe34';
+var queryUrl = '';
+var keyword = '';
+var city = '';
+var startDate = '';
+var endDate = '';
+
 $(document).ready(function () {
 
-    var ticketMasterAPIkey = '3KM0vy3D2FmO3jenjLVFjqLyfQUwxe34';
-    var queryUrl = '';
-    var keyword = '';
-    var city = '';
-    var startDate = '';
-    var endDate = '';
+
+    $(document).on('click', '#search-button', function (event) {
+        event.preventDefault();
+        buildTicketmasterUrl();
+        callTicketMasterAPI ()
 
     
+    });
 
-    //building the queryUrl
-    // need to pull in information from inputs on the main page and put into the correct formats
-    //date format is 2018-07-08T01:03:00Z using zulu (UTC / universal) time. Need to convert to local time
+});//close document ready
 
-    // if (keyWordInput.val() == '') {
-    //     keyword = '';
-    // } else {
-    //     var keyword = '&keyword='/* + input from keyword field*/;
-    // };
+
+////////////////////////////////
+//Called Functions
+////////////////////////////////
+
+
+function buildTicketmasterUrl() {
+    var keywordInput = $('#keyword-input').val();
+
+    if (keywordInput == '') {
+        keyword = '';
+    } else {
+        var keyword = '&keyword=' + keywordInput;
+    };
 
     // if (cityInput.val() == '') {
     //     city = '';
@@ -37,12 +52,16 @@ $(document).ready(function () {
     //     var endDate = '&endDateTime=' /*input from endDate in proper format*/
     // };
 
-    keyword = '&keyword=orlando';
+    //building the queryUrl
+        // need to pull in information from inputs on the main page and put into the correct formats
+        //date format is 2018-07-08T01:03:00Z using zulu (UTC / universal) time. Need to convert to local time
+
 
     queryUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=' + ticketMasterAPIkey + keyword + city + startDate + endDate;
 
+}; //end build ticketmaster url
 
-
+function callTicketMasterAPI () {
     ///call to TicketMaster API
     $.ajax({
         type: "GET",
@@ -67,6 +86,6 @@ $(document).ready(function () {
         error: function (xhr, status, err) {
             // This time, we do not end up here!
         }
-    });
+    });// end ajax call to TicketMaster
 
-});//close document ready
+};
