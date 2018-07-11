@@ -34,6 +34,11 @@ $(document).ready(function () {
 
 });//close document ready
 
+$('.datepicker').datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-3d'
+});
+
 
 
 
