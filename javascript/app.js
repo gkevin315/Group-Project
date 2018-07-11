@@ -1,3 +1,16 @@
+var config = {
+    apiKey: "AIzaSyDnO_h-CoXAmczDFZo9qO5LNUrIdru5K6w",
+    authDomain: "groupproject1-861f6.firebaseapp.com",
+    databaseURL: "https://groupproject1-861f6.firebaseio.com",
+    projectId: "groupproject1-861f6",
+    storageBucket: "groupproject1-861f6.appspot.com",
+    messagingSenderId: "805973606223"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+
 /////////////////////////////////////////////////
 //Global variables
 /////////////////////////////////////////////////
@@ -34,10 +47,7 @@ $(document).ready(function () {
 
 });//close document ready
 
-$('.datepicker').datepicker({
-    format: 'mm/dd/yyyy',
-    startDate: '-3d'
-});
+
 
 
 
