@@ -1,3 +1,30 @@
 .jumbotron {
     text-align: center;
+    
+}
+
+.event-card {
+    width: 25%;
+    height: 600px;
+    border: 1px solid black;
+    display: inline-block;
+
+}
+
+.event-img {
+    width: 100%
+}
+
+.event-link {
+    display: block;
+}
+
+.favorite {
+    display: block;
+}
+
+.bootstrap-iso {
+    float: right;
+    width: 300px;
+    height: 200px;
 }

@@ -15,12 +15,37 @@
 </head>
 
 <body>
+
+
+</div>
     <div id="wrapper">
-        <div class="main-content">
+                    <div class="bootstrap-iso">
+                            <div class="container-fluid">
+                             <div class="row">
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                          
+                               <!-- Form code begins -->
+                               <form method="post">
+                                 <div class="form-group"> <!-- Date input -->
+                                   <label class="control-label" for="date">Date</label>
+                                   <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                                 </div>
+                                 <div class="form-group"> <!-- Submit button -->
+                                   <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+                                 </div>
+                                </form>
+                                <!-- Form code ends -->
+                          
+                               </div>
+                             </div>    
+                            </div>
+                           </div>
+    </div><div class="main-content">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h1 class="display-4">Event Bright</h1>
                     <p class="lead">Local. Events. Weather. Your Spot!</p>
+
                 </div>
             </div>
 
@@ -35,24 +60,28 @@
                 </table>
             </div>
 
+        
             <br>
+<div class= "event-card">
+    <img class= "event-img" src= "bucs.jpg">
+    <div class= "event-name">
+        super cool shit
+        <div class= "event-date">
+            11/11
+            <div class= "weather">
+                cold
+                <div class= "temp">
+                    69
+                    <a class= "event-link">
+                        hyperlink here
+                    </a>
+                    <button class= "favorite">Favorite</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="#" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="#" class="card-link">Card link</a>
-                      <a href="#" class="card-link">Another link</a>
-                    </div>
-                  </div>
 
         
 
@@ -60,7 +89,26 @@
 
                   <!-- Footer -->
             <footer class="page-footer font-small blue">
-
+                    <form>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Email address</label>
+                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputName1">Name</label>
+                              <input type="name" class="form-control" id="exampleInputName1" placeholder="Name">
+                            </div>
+                            <div class="form-check">
+                         
+                              <label class="form-check-label" for="exampleCheck1"></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFavoriteTeam1">Favorite Team</label>
+                                <input type="favoriteTeam" class="form-control" id="exampleInputFavoriteTeam1" placeholder="Favorite Team">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </form>
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">© 2018 Copyright:
             <a href="https://mdbootstrap.com/bootstrap-tutorial/"> Event Bright</a>
@@ -81,3 +129,7 @@
 </body>
 
 </html>
+
+
+
+
