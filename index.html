@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Event Bright</title>
-    
-    
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
@@ -17,188 +17,88 @@
 <body>
 
 
-<div class= "heading">
-    <div id="wrapper">
-                    <div class="bootstrap-iso">
-                            <div class="container-fluid">
-                             <div class="row">
-                              <div class="col-md-6 col-sm-6 col-xs-12">
-                          
-                               <!-- Form code begins -->
-                               <form method="post">
-                                 <div class="form-group"> <!-- Date input -->
-                                   <label class="control-label" for="date">Date</label>
-                                   <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-                                 </div>
-                                 <div class="form-group"> <!-- Submit button -->
-                                   <button class="btn btn-primary " name="submit" type="submit">Submit</button>
-                                 </div>
-                                </form>
-                                <!-- Form code ends -->
-                          
-                               </div>
-                             </div>    
-                            </div>
-                           </div>
-    </div>
     <div class="main-content">
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container1">
-                    <h1 class="display-4">Bright Events</h1>
-                    <p class="lead"><u>Local Weather for Local Events!</u></p>
-
-                </div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container1">
+                <h1 class="display-4">Bright Events</h1>
+                <p class="lead">
+                    <u>Local Weather for Local Events!</u>
+                </p>
             </div>
-           
-
-            <div class="database-output">
-                <table id="output-table">
-
-                </table>
-            </div>
-        </div>
-    </div>    
-  <div class= "search-function">
-            <form class="event-search">
+            <div class="search-function">
+                <form class="event-search">
                     <input id='keyword-input' type="text" placeholder="Search an event..." name="search">
-                    <button id='search-button' type="submit"><i class="fa fa-search"></i></button>
-            </form>
-            </div>
-    <br>
+                    <button id='search-button' type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <!-- Date input -->
+                    <br>
+                    <input class="fa fa-search" id="date" name="date" placeholder="MM/DD/YYYY" type="text" />
+                    <br>
+                    <label class="control-label" for="date">Date (optional)</label>
 
-    <div class= "wrapper-card">
-        <div class= "event-card">
-        <img class= "event-img" src= "bucs.jpg">
-            <div class= "event-name">
-            super cool shit
-                <div class= "event-date">
-                11/11
-                    <div class= "weather">
-                    cold
-                        <div class= "temp">
-                        69
-                            <a class= "event-link">
-                            hyperlink here
-                            </a>
-                            <button class= "favorite">Favorite</button>
-                        </div>
-                    </div>
-                </div>
+                    <br>
+                    <input class="fa fa-search" id="city" name="date" placeholder="City Name" type="text" />
+                    <br>
+                    <label class="control-label" for="city">City (optional)</label>
+                </form>
             </div>
         </div>
+
     </div>
-    
-
-<!-- !!!!!!!!!!!!!!!!! ADDED EXTRA CARDS TO SEE HOW IT LOOKS!!!!! PLZ DELETE!!!!!!!!!!!!!!!!-->
 
 
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!! ENDS HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-                  <div class="bootstrap-iso">
-                    <div class="container-fluid">
-                     <div class="row">
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                   
-                       <!-- Form code begins -->
-                       <form method="post">
-                         <div class="form-group"> <!-- Date input -->
-                           <label class="control-label" for="date">Date</label>
-                           <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-                         </div>
-                         <div class="form-group"> <!-- Submit button -->
-                           <button class="btn btn-primary " name="submit" type="submit">Submit</button>
-                         </div>
-                        </form>
-                        <!-- Form code ends --> 
-                   
-                       </div>
-                     </div>    
-                    </div>
-                   </div>
+    <div class="database-output">
 
-                   <form>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputName1">Name</label>
-                      <input type="name" class="form-control" id="exampleInputName1" placeholder="Name">
-                    </div>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1"></label>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputFavoriteTeam1">Favorite Team</label>
-                        <input type="favoriteTeam" class="form-control" id="exampleInputFavoriteTeam1" placeholder="FavoriteTeam">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-
-                   
-                   
-
-        
+    </div>
 
 
 
-                  <!-- Footer -->
-            <footer class="page-footer font-small blue">
-          
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!! FIREBASE FORM IS COMMENTED OUT FOR NOW< DONT KNOW WHERE TO PUT/FORMAT IT !!!!!!!!!!!!!!!!! --!>          
-          
-                <!-- <div class= "wrapper3">     
-                <form class= "signup">
-                            <div class="form-group1">
-                              <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                            </div>
-                            <div class="form-group1">
-                              <label for="exampleInputName1">Name</label>
-                              <input type="name" class="form-control" id="exampleInputName1" placeholder="Name">
-                            </div>
-                            <div class="form-check">
-                         
-                              <label class="form-check-label" for="exampleCheck1"></label>
-                            </div>
-                            <div class="form-group1">
-                                <label for="exampleInputFavoriteTeam1">Favorite Team</label>
-                                <input type="favoriteTeam" class="form-control" id="exampleInputFavoriteTeam1" placeholder="Favorite Team">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                          </form>
-                   </div> --!>
+    <form class='welcome-form'>
+        <div class="form-group welcome">
+            <label class='top-item' for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group welcome">
+            <label for="exampleInputName1">Name</label>
+            <input type="name" class="form-control" id="name-input" placeholder="Name">
+        </div>
+
+        <div class="form-group welcome">
+            <label for="exampleInputFavoriteTeam1">Favorite Team</label>
+            <input type="favoriteTeam" class="form-control" id="favorite-team" placeholder="FavoriteTeam">
+        </div>
+        <button id="welcome-button" type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
 
 
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
 
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
             <a href="https://mdbootstrap.com/bootstrap-tutorial/"> Bright Events</a>
-            </div>
-            <!-- Copyright -->
-      
-        </footer>
-        <!-- Footer -->
-
         </div>
-    </div>
+        <!-- Copyright -->
 
-<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    </footer>
+    <!-- Footer -->
 
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script> <script type="text/javascript" src="javascript/app.js"></script>
 
-  
+
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="javascript/app.js"></script>
+
+
 
 </body>
 
 </html>
-
-
-
-

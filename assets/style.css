@@ -8,9 +8,11 @@
     background-image: url("../cheers.jpg");
     background-size: cover;
     margin: 0px;
-    padding: 64px;
-    padding-left: 0px;
-    padding-right: 0px;
+    
+}
+
+.main-content {
+    position: relative;
 }
 
 .event-name {
@@ -33,43 +35,85 @@
 .display-4 {
     margin: 0px;
 }
+.welcome-form {
+    position: fixed;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    background:rgba(43, 26, 199, 0.8);
+    border: 2px solid rgb(25, 15, 36);
+}
+
+.welcome {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top-item {
+    margin-top: 20px;
+}
+
+.welcome label {
+    text-shadow: 2px 2px black;
+}
+
+
+#welcome-button {
+    position: relative;
+    display: block;
+    width: 30%;
+    margin: 20px auto;
+}
+
+#date {
+    margin-top: 10px;
+}
+
+
+
+.database-output {
+    position: relative;
+    display: block;
+    min-height: 50vh;
+    margin-bottom: 50px;
+}
 
 .event-card {
+    position: relative;
     width: 25%;
     height: 575px;
     border: 2.5px solid rgb(2, 59, 2);
     display: inline-block;
     background-color: white;
 }
-.signup {
 
-}
 .form-group {
     color: white;
 }
 
-.wrapper-card {
-    padding: 15px;
-}
 
 .event-search {
     padding: 1px;
 
-    position: absolute;
-    right: 50px;
-    margin: auto;
+    position: relative;
+   
     padding: auto;
     overflow: auto;
 
 }
 
 .search-function {
-
+    display: inline-block;
     clear: none;
 }
 
 #keyword-input {
     width: 200px;
+}
+
+.control-label {
+    color: white;
 }
 
 
