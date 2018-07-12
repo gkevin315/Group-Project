@@ -1,3 +1,16 @@
+var config = {
+    apiKey: "AIzaSyDnO_h-CoXAmczDFZo9qO5LNUrIdru5K6w",
+    authDomain: "groupproject1-861f6.firebaseapp.com",
+    databaseURL: "https://groupproject1-861f6.firebaseio.com",
+    projectId: "groupproject1-861f6",
+    storageBucket: "groupproject1-861f6.appspot.com",
+    messagingSenderId: "805973606223"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+
 /////////////////////////////////////////////////
 //Global variables
 /////////////////////////////////////////////////
@@ -33,6 +46,8 @@ $(document).ready(function () {
     });
 
 });//close document ready
+
+
 
 
 
@@ -123,6 +138,7 @@ function callTicketMasterAPI() {
                     eventCity: events[i]._embedded.venues[0].city.name,
                     eventState: events[i]._embedded.venues[0].state.name,
                     eventCountry: events[i]._embedded.venues[0].country.countryCode,
+                    imageUrl: events[i].images[4].url,
                     postalCode: events[i]._embedded.venues[0].postalCode,
                     url: events[i].url,
                     date: events[i].dates.start.localDate,
@@ -213,12 +229,52 @@ function callOpenWeatherAPI() {
                 console.log(eventsArray);
             };
 
-        }).done(); //end response function
+        }).done(createCards); //end response function
 
     };
 };
 
+function createCards() {
+ var i=0;
+ console.log('i' + i);
 
+var newCard =$("<div class ='event-card'>");
+ console.log(eventsArray[i]);
+var eventImage = $("<img class='event-image'>");
+ eventImage.attr('src',eventsArray[i].imageUrl);
+
+ var eventName = $("<div class='event-name'>");
+ eventName.text(eventsArray[i].name);
+
+ var eventDate = $("<div class='event-date'>");
+ eventDate.text(eventsArray[i].date + ' '+eventsArray[i].time);
+
+ var eventWeather = $("<div class='event-weather'>");
+ eventWeather.text(eventsArray[i].description);
+
+ var eventTemp = $("<div class='event-temp'>");
+ eventTemp.text(eventsArray[i].temp);
+
+ var eventLink = $("<a class='event-link'>");
+ eventLink.attr('href',eventsArray[i].link);
+ eventLink.text("Buy tickets here");
+
+ newCard.append (eventImage);
+ newCard.append (eventName);
+ newCard.append (eventDate);
+ newCard.append (eventWeather);
+ newCard.append (eventTemp);
+ newCard.append (eventLink);
+
+var button =$("<button class='favorite'>");
+ button.text ("add.favorite");
+ newCard.append (button);
+$(".database-output").append(newCard);
+
+
+
+
+};
 
 //Ticketmaster date format
 //YYYY-MM-DDTHH:mm:ssZ
