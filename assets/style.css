@@ -4,11 +4,13 @@
 }
 
 .jumbotron-fluid {
-
+    position: relative;
     background-image: url("../cheers.jpg");
     background-size: cover;
     margin: 0px;
-    
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .main-content {
@@ -24,13 +26,25 @@
     overflow: auto;
 }
 .container1 {
-    float: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     display: inline-flex;
     font-family: 'georgia';
     color: white;
     margin: 0px;
     clear: none;
+    vertical-align: bottom;
 }
+
+.lead {
+    position: relative;
+    bottom: 0;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+
 
 .display-4 {
     margin: 0px;
@@ -103,7 +117,16 @@
 
 }
 
+#search-button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
 .search-function {
+    position: absolute;
+    right: 0;
+    top: 0;
     display: inline-block;
     clear: none;
 }
@@ -152,3 +175,139 @@ body {
     background-attachment: fixed;
     min-width: 950px;
 }
+
+.jumbotron {
+   text-align: center;
+
+}
+
+.jumbotron-fluid {
+
+   background-image: url("../cheers.jpg");
+   background-size: cover;
+   margin: 0px;
+   padding: 64px;
+   padding-left: 0px;
+   padding-right: 0px;
+}
+
+.event-name {
+   padding: 2px;
+
+}
+
+.clearfix {
+   overflow: auto;
+}
+.container1 {
+   float: left;
+   display: inline-flex;
+   font-family: 'georgia';
+   color: white;
+   margin: 0px;
+   clear: none;
+}
+
+.display-4 {
+   margin: 0px;
+}
+
+.event-card {
+   width: 25%;
+   height: 575px;
+   border: 2.5px solid rgb(2, 59, 2);
+   display: inline-block;
+   background-color: white;
+   float: left;
+}
+
+.form-group {
+   color: white;
+}
+
+.wrapper-card {
+   padding: 15px;
+}
+
+.event-search {
+   padding: 1px;
+   position: absolute;
+   right: 50px;
+   margin: auto;
+   padding: auto;
+   overflow: auto;
+
+}
+
+.search-function {
+
+   clear: none;
+}
+
+#keyword-input {
+   width: 200px;
+}
+
+
+.wrapper3 {
+   width: 15%;
+   height:25px;
+       
+}
+
+footer {
+   background-color: white;
+}
+
+.event-img {
+   width: 100%
+}
+
+.event-link {
+   display: block;
+}
+
+.favorite {
+   display: block;
+}
+
+.bootstrap-iso {
+   float: right;
+   width: 300px;
+   height: 200px;
+}
+
+body {
+   background-image: url("../field.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   min-width: 950px;
+}
+
+#logo {
+   width: 100px;
+   height: 100px;
+   position: inline;
+   margin-right: auto;
+   margin-left: auto;
+   float: left;
+   padding-top: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+   .event-card {
+       width: 80%;
+       margin-left: auto;
+       margin-right: auto;
+   }
+  }
+
+  @media screen and (max-width: 460px) {
+    .event-card {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+   }

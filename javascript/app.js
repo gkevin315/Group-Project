@@ -37,11 +37,6 @@ $(document).ready(function () {
 
     checkUserName();
 
-    // 1. Ensure  the username from local storage label matches that below
-    // 2. Find name of the div box to hide (maybe welcome screen)
-
-
-
 
 
     //////////////////////////////////////////////////
@@ -93,7 +88,7 @@ $(document).ready(function () {
     $(document).on('click', '.favorite', function (event) {
         event.preventDefault();
 
-        //saveFavoriteToFirebase();  //uncomment later
+        saveFavoriteToFirebase(this);  //uncomment later
 
 
     });
@@ -362,21 +357,25 @@ function createCards() {
 
 
 
-/* #############################################################
+
 ////////////////////////////////////////
 //Function to add favorite to firebase
 
-function saveFavoriteToFirebase() {
+function saveFavoriteToFirebase(eventReference) {
 
 
-    var storeEventName = $(this).attr('data-name');
+    var storeEventName = $(eventReference).attr('data-name');
+    console.log('event name: ' + $(eventReference).attr('data-name'));
     favoritesArray.push(storeEventName);
     console.log(favoritesArray);
 
-    //send to firebase based on username in local storage
+    //send favorites array to local storage
+
+    localStorage.setItem('favorites', favoritesArray);
+
 
 };
-########################################################## */
+
 
 
 
@@ -402,14 +401,14 @@ function saveUserInput() {
     localStorage.setItem("user", JSON.stringify(userStore));
 
 
-    //send to firebase based on username in local storage //Need to check for of what is in firebase from Kevin
-    // var userRef = database.ref('users/' + name).set();
-    // userRef.push({
-    //     name: name,
-    //     email: email,
-    //     favoriteTeam: favoriteTeam,
-    //     favorites: []
-    // })
+     //send to firebase based on username in local storage //Need to check for of what is in firebase from Kevin
+    var userRef = database.ref('/users').push();
+    userRef.push({
+        name: name,
+        email: email,
+        favoriteTeam: favoriteTeam,
+        favorites: []
+    })
 
 };
 
