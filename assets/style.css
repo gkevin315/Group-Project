@@ -288,12 +288,19 @@ body {
 #logo {
    width: 100px;
    height: 100px;
-   position: inline;
+   position: absolute;
+   top: 0;
+   right: 260px;
    margin-right: auto;
    margin-left: auto;
    float: left;
    padding-top: 20px;
 }
+
+#logo2 {
+    width: 30px;
+    height: 30px;
+ }
 
 
 @media screen and (max-width: 768px) {
